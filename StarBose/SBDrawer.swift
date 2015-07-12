@@ -11,6 +11,10 @@ import SpriteKit
 
 class SBDrawer {
     
+    var divSizeX :CGFloat! // width / 3
+    var divSizeY :CGFloat! // height / 3
+    var diffX :CGFloat!
+    var diffY :CGFloat!
     var gameScene :GameScene
     var size :CGSize!
 
@@ -28,8 +32,8 @@ class SBDrawer {
         
         // adjust size
         var w = gameScene.size.width * 0.9
-        var diffX = (gameScene.size.width - w) / 2.0
-        var diffY = (gameScene.size.height - w) / 2.0
+        diffX = (gameScene.size.width - w) / 2.0
+        diffY = (gameScene.size.height - w) / 2.0
         var center = CGPointMake(gameScene.size.width / 2, gameScene.size.height / 2)
         size = CGSize(width: w, height: w)
         
@@ -39,8 +43,8 @@ class SBDrawer {
         gameScene.addChild(box)
         
         // draw line
-        let divSizeX = size.width / CGFloat(WIDTH)
-        let divSizeY = size.height / CGFloat(HEIGHT)
+        divSizeX = size.width / CGFloat(WIDTH)
+        divSizeY = size.height / CGFloat(HEIGHT)
         
         for i in 0..<WIDTH {
             let line = SKShapeNode()
@@ -76,11 +80,11 @@ class SBDrawer {
         
         var img :SKShapeNode!
         if p == Piece.STAR {
-            img = SKShapeNode(circleOfRadius: 60) // TODO for debug
+            img = SKShapeNode(circleOfRadius: divSizeX / 2.0) // TODO for debug
             img.fillColor = SKColor.blueColor()
             
         } else if p == Piece.BOSE {
-            img = SKShapeNode(circleOfRadius: 60) // TODO for debug
+            img = SKShapeNode(circleOfRadius: divSizeX / 2.0) // TODO for debug
             img.fillColor = SKColor.redColor()
         }
         return img
@@ -88,16 +92,30 @@ class SBDrawer {
     
     // draw piece
     func addPiece(x :CGFloat, y :CGFloat, p :Piece) {
-        if p == Piece.STAR {
+        
+       if p == Piece.STAR {
             var star = createNode(p)
-            star.position = CGPointMake(x, y)
+            star.position = convert(x, y: y)
             gameScene.addChild(star)
             
         } else if p == Piece.BOSE {
             var bose = createNode(p)
-            bose.position = CGPointMake(x, y)
+            bose.position = convert(x, y: y)
             gameScene.addChild(bose)
             
         }
+    }
+
+    // convert touch position to piece position
+    func convert(x :CGFloat, y :CGFloat) -> CGPoint {
+        
+        // convert Absolute position
+        let dex = Int(x - diffX) / Int(divSizeX)
+        let dey = Int(y - diffY) / Int(divSizeY)
+        
+        var bx = CGFloat(dex) * divSizeX + diffX + divSizeX / 2.0
+        var by = CGFloat(dey) * divSizeY + diffY + divSizeY / 2.0
+        
+        return CGPointMake(bx, by)
     }
 }

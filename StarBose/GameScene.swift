@@ -10,7 +10,25 @@ import SpriteKit
 
 class GameScene: SKScene {
 
+    var manager :SBManager!
+
+    // not supported construct.
+    required init(coder aDecoder: NSCoder) {
+        fatalError("NSCoder not supported")
+    }
+    
+    override init(size: CGSize) {
+        super.init(size: size)
+        manager = SBManager(scene: self)
+    }
+    
+    // update
     override func update(currentTime: CFTimeInterval) {
-        /* Called before each frame is rendered */
+    }
+    
+    // handling on touch
+    func onTouch(point :CGPoint) {
+        let position = CGPoint(x: point.x, y: (super.size.height - point.y))
+        manager.onTouch(position)
     }
 }

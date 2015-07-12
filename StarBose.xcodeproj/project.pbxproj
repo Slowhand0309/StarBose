@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D31309691B47B0E5006C89A7 /* SBState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31309681B47B0E5006C89A7 /* SBState.swift */; };
+		D34A62831B47BE1B008D289E /* SBState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34A62821B47BE1B008D289E /* SBState.swift */; };
+		D34A62841B47BECC008D289E /* SBState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34A62821B47BE1B008D289E /* SBState.swift */; };
+		D35AFC071B4ADE1F00C5BC7E /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EF354E1B3C5CCF0084A32F /* GameScene.swift */; };
 		D3EE970E1B45A33400BDF0D8 /* SBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EE970D1B45A33400BDF0D8 /* SBManager.swift */; };
 		D3EE970F1B45A33400BDF0D8 /* SBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EE970D1B45A33400BDF0D8 /* SBManager.swift */; };
 		D3EE97141B45A3DE00BDF0D8 /* SBDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EE97131B45A3DE00BDF0D8 /* SBDrawer.swift */; };
@@ -36,7 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D31309681B47B0E5006C89A7 /* SBState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SBState.swift; sourceTree = "<group>"; };
+		D34A62821B47BE1B008D289E /* SBState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SBState.swift; sourceTree = "<group>"; };
 		D3EE970D1B45A33400BDF0D8 /* SBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SBManager.swift; sourceTree = "<group>"; };
 		D3EE97131B45A3DE00BDF0D8 /* SBDrawer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SBDrawer.swift; sourceTree = "<group>"; };
 		D3EE97161B45A43D00BDF0D8 /* SBConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SBConfig.swift; sourceTree = "<group>"; };
@@ -102,9 +104,9 @@
 				D3EF35481B3C5CCF0084A32F /* Supporting Files */,
 				D3EE970D1B45A33400BDF0D8 /* SBManager.swift */,
 				D3EE97131B45A3DE00BDF0D8 /* SBDrawer.swift */,
-				D31309681B47B0E5006C89A7 /* SBState.swift */,
 				D3EE97161B45A43D00BDF0D8 /* SBConfig.swift */,
 				D3EE97191B45A45900BDF0D8 /* SBIntelligence.swift */,
+				D34A62821B47BE1B008D289E /* SBState.swift */,
 			);
 			path = StarBose;
 			sourceTree = "<group>";
@@ -235,12 +237,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3EE97141B45A3DE00BDF0D8 /* SBDrawer.swift in Sources */,
+				D34A62831B47BE1B008D289E /* SBState.swift in Sources */,
 				D3EF354F1B3C5CCF0084A32F /* GameScene.swift in Sources */,
 				D3EE97171B45A43D00BDF0D8 /* SBConfig.swift in Sources */,
 				D3EF35511B3C5CCF0084A32F /* GameViewController.swift in Sources */,
 				D3EE970E1B45A33400BDF0D8 /* SBManager.swift in Sources */,
 				D3EF354B1B3C5CCF0084A32F /* AppDelegate.swift in Sources */,
-				D31309691B47B0E5006C89A7 /* SBState.swift in Sources */,
 				D3EE971A1B45A45900BDF0D8 /* SBIntelligence.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,6 +251,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D35AFC071B4ADE1F00C5BC7E /* GameScene.swift in Sources */,
+				D34A62841B47BECC008D289E /* SBState.swift in Sources */,
 				D3EE97181B45A43D00BDF0D8 /* SBConfig.swift in Sources */,
 				D3EE970F1B45A33400BDF0D8 /* SBManager.swift in Sources */,
 				D3EF35651B3C5CCF0084A32F /* StarBoseTests.swift in Sources */,

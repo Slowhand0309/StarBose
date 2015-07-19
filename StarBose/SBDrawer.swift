@@ -9,6 +9,9 @@
 import Foundation
 import SpriteKit
 
+// width size rate
+let SIZE_ACPECT_RATE :CGFloat = 0.9
+
 class SBDrawer {
     
     var divSizeX :CGFloat! // width / 3
@@ -31,10 +34,10 @@ class SBDrawer {
     func addBackgroundNode() {
         
         // adjust size
-        var w = gameScene.size.width * 0.9
+        let w = gameScene.size.width * SIZE_ACPECT_RATE
         diffX = (gameScene.size.width - w) / 2.0
         diffY = (gameScene.size.height - w) / 2.0
-        var center = CGPointMake(gameScene.size.width / 2, gameScene.size.height / 2)
+        let center = CGPointMake(gameScene.size.width / 2, gameScene.size.height / 2)
         size = CGSize(width: w, height: w)
         
         // create box node
@@ -74,6 +77,17 @@ class SBDrawer {
 
     }
     
+    // check position
+    func isPossible(x :CGFloat, y :CGFloat) -> Bool {
+        if x < diffX || (size.width + diffX) < x {
+            return false
+        }
+        if y < diffY || (size.height + diffY) < y {
+            return false
+        }
+        return true
+    }
+    
     // create star bose image
     // TODO not supported custom image!
     func createNode(p :Piece) -> SKShapeNode! {
@@ -93,13 +107,17 @@ class SBDrawer {
     // draw piece
     func addPiece(x :CGFloat, y :CGFloat, p :Piece) {
         
-       if p == Piece.STAR {
-            var star = createNode(p)
+        if !isPossible(x, y: y) {
+            return
+        }
+        
+        if p == Piece.STAR {
+            let star = createNode(p)
             star.position = convert(x, y: y)
             gameScene.addChild(star)
             
         } else if p == Piece.BOSE {
-            var bose = createNode(p)
+            let bose = createNode(p)
             bose.position = convert(x, y: y)
             gameScene.addChild(bose)
             
@@ -113,8 +131,8 @@ class SBDrawer {
         let dex = Int(x - diffX) / Int(divSizeX)
         let dey = Int(y - diffY) / Int(divSizeY)
         
-        var bx = CGFloat(dex) * divSizeX + diffX + divSizeX / 2.0
-        var by = CGFloat(dey) * divSizeY + diffY + divSizeY / 2.0
+        let bx = CGFloat(dex) * divSizeX + diffX + divSizeX / 2.0
+        let by = CGFloat(dey) * divSizeY + diffY + divSizeY / 2.0
         
         return CGPointMake(bx, by)
     }

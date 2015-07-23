@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D31AA4BF1B61306A009AE6FA /* SBScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31AA4BE1B61306A009AE6FA /* SBScale.swift */; };
+		D31AA4C01B61306A009AE6FA /* SBScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31AA4BE1B61306A009AE6FA /* SBScale.swift */; };
 		D34A62831B47BE1B008D289E /* SBState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34A62821B47BE1B008D289E /* SBState.swift */; };
 		D34A62841B47BECC008D289E /* SBState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34A62821B47BE1B008D289E /* SBState.swift */; };
 		D35AFC071B4ADE1F00C5BC7E /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EF354E1B3C5CCF0084A32F /* GameScene.swift */; };
@@ -38,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D31AA4BE1B61306A009AE6FA /* SBScale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SBScale.swift; sourceTree = "<group>"; };
 		D34A62821B47BE1B008D289E /* SBState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SBState.swift; sourceTree = "<group>"; };
 		D3EE970D1B45A33400BDF0D8 /* SBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SBManager.swift; sourceTree = "<group>"; };
 		D3EE97131B45A3DE00BDF0D8 /* SBDrawer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SBDrawer.swift; sourceTree = "<group>"; };
@@ -107,6 +110,7 @@
 				D3EE97161B45A43D00BDF0D8 /* SBConfig.swift */,
 				D3EE97191B45A45900BDF0D8 /* SBIntelligence.swift */,
 				D34A62821B47BE1B008D289E /* SBState.swift */,
+				D31AA4BE1B61306A009AE6FA /* SBScale.swift */,
 			);
 			path = StarBose;
 			sourceTree = "<group>";
@@ -185,6 +189,7 @@
 				TargetAttributes = {
 					D3EF35441B3C5CCF0084A32F = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = AEA7DDG699;
 					};
 					D3EF355D1B3C5CCF0084A32F = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -239,6 +244,7 @@
 				D3EE97141B45A3DE00BDF0D8 /* SBDrawer.swift in Sources */,
 				D34A62831B47BE1B008D289E /* SBState.swift in Sources */,
 				D3EF354F1B3C5CCF0084A32F /* GameScene.swift in Sources */,
+				D31AA4BF1B61306A009AE6FA /* SBScale.swift in Sources */,
 				D3EE97171B45A43D00BDF0D8 /* SBConfig.swift in Sources */,
 				D3EF35511B3C5CCF0084A32F /* GameViewController.swift in Sources */,
 				D3EE970E1B45A33400BDF0D8 /* SBManager.swift in Sources */,
@@ -256,6 +262,7 @@
 				D3EE97181B45A43D00BDF0D8 /* SBConfig.swift in Sources */,
 				D3EE970F1B45A33400BDF0D8 /* SBManager.swift in Sources */,
 				D3EF35651B3C5CCF0084A32F /* StarBoseTests.swift in Sources */,
+				D31AA4C01B61306A009AE6FA /* SBScale.swift in Sources */,
 				D3EE97151B45A3DE00BDF0D8 /* SBDrawer.swift in Sources */,
 				D3EE971B1B45A45900BDF0D8 /* SBIntelligence.swift in Sources */,
 			);
@@ -330,7 +337,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
+				SDKROOT = iphoneos9.0;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -368,7 +375,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = iphoneos;
+				SDKROOT = iphoneos9.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -378,9 +385,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = StarBose/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -388,9 +400,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = StarBose/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

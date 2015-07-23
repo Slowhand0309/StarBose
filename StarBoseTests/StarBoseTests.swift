@@ -26,6 +26,15 @@ class StarBoseTests: XCTestCase {
         XCTAssert(true, "Pass")
     }
     
+    func testSBState() {
+    
+        let state :SBState = SBState()
+        
+        // test for check range
+        let val = state[99, 99]!
+        XCTAssertEqual(val, Piece.NONE, "faild check range")
+    }
+    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measureBlock() {

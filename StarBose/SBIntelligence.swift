@@ -10,4 +10,15 @@ import Foundation
 
 class SBIntelligence {
     
+    init() {
+        
+    }
+    
+    // AI
+    func cacl(state :SBState) -> (ix :Int, iy :Int) {
+        
+        // TODO think processing
+        
+        return (-1, -1)
+    }
 }

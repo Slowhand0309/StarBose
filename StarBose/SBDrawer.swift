@@ -90,7 +90,7 @@ class SBDrawer {
     func convert(x :Int, y :Int) -> CGPoint {
         
         let bx = CGFloat(x) * scale.divSizeX + scale.diffX + scale.divSizeX / 2.0
-        let by = CGFloat(y) * scale.divSizeY + scale.diffY + scale.divSizeY / 2.0
+        let by = gameScene.size.height - (CGFloat(y) * scale.divSizeY + scale.diffY + scale.divSizeY / 2.0)
         return CGPointMake(bx, by)
     }
 }

@@ -28,7 +28,7 @@ class GameScene: SKScene {
     
     // handling on touch
     func onTouch(point :CGPoint) {
-        let position = CGPoint(x: point.x, y: (super.size.height - point.y))
+        let position = CGPoint(x: point.x, y: point.y)
         manager.onTouch(position)
     }
 }

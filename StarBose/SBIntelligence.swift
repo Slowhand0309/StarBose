@@ -8,17 +8,17 @@
 
 import Foundation
 
-class SBIntelligence {
+public class SBIntelligence {
     
-    init() {
-        
+    let piece :Piece
+    
+    // Constructor
+    public init (p :Piece) {
+        piece = p
     }
     
-    // AI
+    // calculate to put place
     func cacl(state :SBState) -> (ix :Int, iy :Int) {
-        
-        // TODO think processing
-        
         return (-1, -1)
     }
 }

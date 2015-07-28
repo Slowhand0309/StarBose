@@ -32,7 +32,15 @@ class StarBoseTests: XCTestCase {
         
         // test for check range
         let val = state[99, 99]!
-        XCTAssertEqual(val, Piece.NONE, "faild check range")
+        XCTAssertEqual(val, Piece.NONE, "faild check range1")
+        
+        let val2 = state[-1, -1]!
+        XCTAssertEqual(val2, Piece.NONE, "faild check range2")
+        
+        // test for set/get
+        state[1, 1] = Piece.STAR
+        let ret = state[1, 1]!
+        XCTAssertEqual(ret, Piece.STAR, "faild check set/get")
     }
     
     func testPerformanceExample() {

@@ -37,7 +37,7 @@ class SBManager {
         state = SBState()
         scale = SBScale(scene: scene)
         drawer = SBDrawer(_scale: scale, scene: scene)
-        inteligence = SBIntelligence()
+        inteligence = SBWeakAi(p: Piece.BOSE) // TODO decide to look at the turn
     }
     
     // on touch
@@ -51,10 +51,14 @@ class SBManager {
         
         putPiece(idx.ix, y: idx.iy)
         if turn == InteligenceTurn {
-            //
+            // To think in AI
             let idx = inteligence.cacl(state)
             if idx.ix != -1 && idx.iy != -1 {
-                putPiece(idx.ix, y: idx.iy)
+                let delay = 1.0 * Double(NSEC_PER_SEC)
+                let time  = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+                dispatch_after(time, dispatch_get_main_queue(), {
+                    self.putPiece(idx.ix, y: idx.iy)
+                })
             }
         }
     }

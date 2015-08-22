@@ -14,6 +14,8 @@ class GameViewController: UIViewController, UIGestureRecognizerDelegate {
 
     var scene :GameScene!
     
+    @IBOutlet weak var message: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,6 +23,7 @@ class GameViewController: UIViewController, UIGestureRecognizerDelegate {
         
         // initalize GameScene
         scene = GameScene(size: skView.bounds.size)
+        scene.setMessageButton(message)
         skView.presentScene(scene)
     }
 

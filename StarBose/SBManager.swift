@@ -12,6 +12,7 @@ import SpriteKit
 // declare turn
 let TURN_FIRST = 0
 let TURN_LAST = 1
+let TURN_COMP = 2
 
 // declare Squares : 3×3
 let WIDTH :Int = 3
@@ -27,6 +28,7 @@ class SBManager {
     var drawer :SBDrawer!
     var state :SBState!
     var inteligence :SBIntelligence
+    var message :UIButton!
 
     // initalize
     init(scene :GameScene) {
@@ -40,9 +42,20 @@ class SBManager {
         inteligence = SBWeakAi(p: Piece.BOSE) // TODO decide to look at the turn
     }
     
+    // set ui button
+    func setMessageButton(button :UIButton!) {
+        self.message = button
+    }
+    
     // on touch
     func onTouch(point :CGPoint) {
 
+        if turn == InteligenceTurn ||
+           turn == TURN_COMP {
+           // Skip inteligence turn
+            return
+        }
+        
         // check touch position
         let idx = scale.convert(point.x, y: point.y)
         if !isPossible(idx.ix, iy: idx.iy) {
@@ -89,16 +102,22 @@ class SBManager {
         
         let check = checkAligned(x, y: y)
         if check != Piece.NONE {
+            turn = TURN_COMP
             // TODO show dialog for debug
             let alert = UIAlertView()
+            var msg = "Win Star!! back title"
             alert.title = "title"
             if check == Piece.STAR {
                 alert.message = "win star"
             } else {
                 alert.message = "win bose"
+                msg = "Win Bose!! back title"
             }
             alert.addButtonWithTitle("OK")
             alert.show()
+            
+            self.message.setTitle(msg, forState: UIControlState.Normal)
+            self.message.setTitleColor(UIColor.redColor(), forState: UIControlState.Normal)
         }
     }
     

@@ -26,6 +26,11 @@ class GameScene: SKScene {
     override func update(currentTime: CFTimeInterval) {
     }
     
+    // set ui button
+    func setMessageButton(button :UIButton!) {
+        manager.setMessageButton(button)
+    }
+    
     // handling on touch
     func onTouch(point :CGPoint) {
         let position = CGPoint(x: point.x, y: point.y)
